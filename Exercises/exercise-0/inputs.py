@@ -10,7 +10,7 @@ class FunctionInputs(AutomateBase):
     https://docs.pydantic.dev/latest/usage/models/
     """
 
-  comment_phrase: str = Field(
-    title="Comment Phrase",
-    description="This phrase will be added to a random model element.",
-  )
+    comment_phrase: str = Field(
+      title="Comment Phrase",
+      description="This phrase will be added to a random model element.",
+    )
