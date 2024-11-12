@@ -1,13 +1,17 @@
 [tool.poetry]
 name = "speckle-automate-py"
 version = "0.1.0"
-description = "Example function for Speckle Automate using specklepy"
-authors = ["Gergő Jedlicska <gergo@jedlicska.com>"]
+description = "Template function for SpeckleCon Coding workshop"
+authors = ["Jonathon Broughton <jonathon@speckle.systems>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 specklepy = "^2.20.0"
+python-levenshtein = "^0.26.1"
+more-itertools = "^10.5.0"
+pandas = "^2.2.2"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
