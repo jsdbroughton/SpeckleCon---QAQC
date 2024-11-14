@@ -2,6 +2,7 @@ from pydantic import Field
 from speckle_automate import AutomationContext, AutomateBase
 
 from Exercises.exercise_3.rules import apply_rules_to_objects
+from Exercises.exercise_3.inputs import FunctionInputs
 from Utilities.helpers import flatten_base
 from Utilities.spreadsheet import read_rules_from_spreadsheet
 

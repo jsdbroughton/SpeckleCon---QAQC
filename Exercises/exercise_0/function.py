@@ -2,7 +2,7 @@ import random
 
 from speckle_automate import AutomationContext
 
-from inputs import FunctionInputs
+from Exercises.exercise_0.inputs import FunctionInputs
 from Utilities.flatten import flatten_base
 
 
@@ -40,6 +40,8 @@ def automate_function(
         automate_context.mark_run_failed(
           "Automation failed: No displayable objects found."
         )
+
+        print(len(displayable_objects))
 
     else:
         # select a random object from the list

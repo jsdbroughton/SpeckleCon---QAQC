@@ -2,7 +2,8 @@ import random
 
 from speckle_automate import AutomationContext
 
-from inputs import FunctionInputs
+from Exercises.exercise_2.inputs import FunctionInputs
+from Exercises.exercise_2.rules import RevitRules
 from Utilities.flatten import flatten_base
 
 
@@ -51,12 +52,11 @@ def automate_function(
     valid_property_objects = [
       obj
       for obj in property_objects
-      if RevitRules.get_parameter_value(obj, function_inputs.property)
-         not in ["", "Default", None]
+      if RevitRules.get_parameter_value(obj, function_inputs.property) not in ["", "Default", None]
     ]
 
     for obj in valid_property_objects:
-      speckle_print(RevitRules.get_parameter_value(obj, function_inputs.property))
+        speckle_print(RevitRules.get_parameter_value(obj, function_inputs.property))
 
     # invalid_property_objects property_objects not in valid_property_objects
     invalid_property_objects = [
@@ -99,18 +99,18 @@ def automate_function(
     )
 
     if len(non_property_objects) > 0:
-      automate_context.mark_run_failed(
-        "Some objects do not have the specified property."
-      )
+        automate_context.mark_run_failed(
+          "Some objects do not have the specified property."
+        )
     elif len(invalid_property_objects) > 0:
-      automate_context.mark_run_success(
-        "Some objects have the specified property but it is empty or default.",
-      )
+        automate_context.mark_run_success(
+          "Some objects have the specified property but it is empty or default.",
+        )
 
     else:
-      automate_context.mark_run_success(
-        f"All {function_inputs.category} objects have the {function_inputs.property} property."
-      )
+        automate_context.mark_run_success(
+          f"All {len(in_category_objects)} {function_inputs.category} objects have the {function_inputs.property} property."
+        )
 
     # set the automation context view, to the original model / version view
     automate_context.set_context_view()
